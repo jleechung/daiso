@@ -33,7 +33,7 @@ daiso requires only one input: alignment (bam files) of long ONT reads to the tr
 
 From raw ONT reads (fasta or fastq files), you can execute
 ```
-# reads.fa are you reads, ref.fa is a reference transcriptome
+# reads.fa are your reads, ref.fa is a reference transcriptome
 minimap2 -ax map-ont -N10 reads.fa ref.fa | samtools view -b > alnm.bam
 samtools sort -O BAM alnm.bam > alnm_sorted.bam
 samtools index alnm_sorted.bam
