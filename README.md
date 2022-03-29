@@ -131,6 +131,8 @@ General help:
   -v, --version         Print version
 ```
 
+## Software limitations
 
+Not supported on windows due to dependencies on pysam. Consider WSL.
 
 
