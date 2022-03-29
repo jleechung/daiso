@@ -533,8 +533,13 @@ def run_vb(args, rho_mat, alpha_mat, num_read, num_iso, iso_nm):
 def main():
     parser = parser_init()
     args = parser.parse_args()
+    
     if args.version:
         print('v%s' % VERSION)
+        sys.exit()
+
+    if args.alignment is None:
+        print('Please provide a path to an alignment file via --alignment')
         sys.exit()
 
     print(args)
