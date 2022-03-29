@@ -1,6 +1,6 @@
 # Degradation-aware isoform quantification
 
-daiso is tool for isoform abundance estimation from ONT direct RNA-seq that models degradation bias. 
+daiso is a tool for isoform abundance estimation from ONT direct RNA-seq that models degradation bias. 
 
 ## Installation
 
