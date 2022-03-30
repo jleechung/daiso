@@ -21,7 +21,7 @@ import scipy.stats as st
 from sklearn.preprocessing import normalize
 from statsmodels.distributions.empirical_distribution import ECDF
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 
 # Helper functions -------------------------------------------------------------
 
@@ -84,7 +84,8 @@ def exact_read_len_prob(args, curr_read_len, curr_iso_len, avg_deg_rate):
     if isclose(curr_read_len, curr_iso_len, abs_tol = full_len_tol): # full length read
         return 1 - avg_deg_rate * curr_read_len
     elif curr_read_len < min(max_len, curr_iso_len): # degraded read
-        return avg_deg_rate/ (curr_iso_len * 1e3)
+        #return avg_deg_rate/ (curr_iso_len * 1e3)
+        return avg_deg_rate / 1e3
     return 0
 
 def parser_init():
@@ -533,7 +534,7 @@ def run_vb(args, rho_mat, alpha_mat, num_read, num_iso, iso_nm):
 def main():
     parser = parser_init()
     args = parser.parse_args()
-    
+
     if args.version:
         print('v%s' % VERSION)
         sys.exit()
