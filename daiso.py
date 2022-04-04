@@ -21,7 +21,7 @@ import scipy.stats as st
 from sklearn.preprocessing import normalize
 from statsmodels.distributions.empirical_distribution import ECDF
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 
 # Helper functions -------------------------------------------------------------
 
@@ -67,7 +67,7 @@ def flex_read_len_prob(args, curr_read_len, curr_iso_len, ecdf):
         degraded_prob_unnorm = lim_upp - lim_low
     else:
         degraded_prob_unnorm = 1 - ecdf(max_len - 1e-3)
-    return degraded_prob_unnorm / ecdf(curr_iso_len)
+    return degraded_prob_unnorm
 
 def exact_read_len_prob(args, curr_read_len, curr_iso_len, avg_deg_rate):
     '''
